@@ -2,6 +2,7 @@ package Vis.JavaCodes.BinarySearch;
 
 public class SimpleBinarySearch {
     public static void main(String[] args) {
+        //simple binary search
         int[] arr = {1,2,3,4,5,6,7,8,9,10};
         for(int i = 1; i<11;i++){
             System.out.println(binarySearch(arr,i));
