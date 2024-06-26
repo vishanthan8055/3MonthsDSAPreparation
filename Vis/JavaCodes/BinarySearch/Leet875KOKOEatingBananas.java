@@ -10,9 +10,8 @@ public class Leet875KOKOEatingBananas {
     }
     public static int minEatingSpeed(int[] piles, int h) {
         int sol = 0;
-        Arrays.sort(piles);
         int s = 1;
-        int e = piles[piles.length-1];
+        int e = max(piles);
         while(s<=e) {
             int m = s + ((e - s) / 2);
             long hours = hours(piles,m);
@@ -33,5 +32,14 @@ public class Leet875KOKOEatingBananas {
             hours = hours + e;
         }
         return hours;
+    }
+    public static int max(int[] piles){
+        int max = 0;
+        for(int x : piles){
+            if(x>max){
+                max = x;
+            }
+        }
+        return max;
     }
 }
