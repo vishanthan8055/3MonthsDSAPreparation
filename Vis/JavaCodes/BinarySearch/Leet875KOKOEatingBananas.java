@@ -4,18 +4,26 @@ import java.util.Arrays;
 
 public class Leet875KOKOEatingBananas {
     public static void main(String[] args) {
-        int[] arr = {805306368,805306368,805306368};
-        int h = 1000000000;
+        int[] arr = {312884470};
+        int h = 968709470;
         System.out.println(minEatingSpeed(arr,h));
     }
     public static int minEatingSpeed(int[] piles, int h) {
         int sol = 0;
-        int s = 1;
-        int e = max(piles);
+        int s = 0;
+        int e = 0;
+        for(int x : piles){
+            s+=x;
+            if(x>e){
+                e = x;
+            }
+        }
+         s = s / h + ((s % h == 0) ? 0 : 1);
+
         while(s<=e) {
             int m = s + ((e - s) / 2);
-            long hours = hours(piles,m);
-            if(hours <= h){
+            boolean hours = hours(piles,m,h);
+            if(hours){
                 sol = m;
                 e = m -1;
             }
@@ -25,21 +33,15 @@ public class Leet875KOKOEatingBananas {
         }
         return sol;
     }
-    public static long hours(int[] piles,int b){
+    public static boolean hours(int[] piles,int b,int h){
         long hours = 0;
         for(int i : piles){
             int e = i / b + ((i % b == 0) ? 0 : 1);
             hours = hours + e;
-        }
-        return hours;
-    }
-    public static int max(int[] piles){
-        int max = 0;
-        for(int x : piles){
-            if(x>max){
-                max = x;
+            if(hours > h){
+                return false;
             }
         }
-        return max;
+        return (hours <= h);
     }
 }
