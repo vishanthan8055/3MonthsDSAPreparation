@@ -10,15 +10,11 @@ public class Leet1550ThreeConsecutiveOdds {
             return false;
         }
         int p1 = 0;
-        int p2 = 1;
-        int p3 = 2;
-        while(p3 < arr.length){
-            if(arr[p1]%2 != 0 && arr[p2]%2 != 0 && arr[p3]%2 !=0){
+        while(p1+2 < arr.length){
+            if(arr[p1]%2 != 0 && arr[p1+1]%2 != 0 && arr[p1+2]%2 !=0){
                 return true;
             }
             p1++;
-            p2++;
-            p3++;
         }
         return false;
     }
