@@ -18,13 +18,7 @@ public class Leet888FairCandySwap {
         for(int i:bobSizes){
             b+=i;
         }
-        int t = 0;
-        if(a>b){
-            t = a - 1;
-        }
-        else{
-            t = a + 1;
-        }for(int i:aliceSizes){
+        for(int i:aliceSizes){
             int s = 0;
             int e = bobSizes.length-1;
             while(s<=e){
