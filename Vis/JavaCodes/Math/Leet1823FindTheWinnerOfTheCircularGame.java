@@ -1,4 +1,4 @@
-package Vis.JavaCodes;
+package Vis.JavaCodes.Math;
 
 import java.util.ArrayList;
 
