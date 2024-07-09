@@ -1,4 +1,4 @@
-package Vis;
+package Vis.JavaCodes.Simulation;
 
 public class Leet1701AverageWaitingTime {
     public static void main(String[] args) {
@@ -11,12 +11,11 @@ public class Leet1701AverageWaitingTime {
         int ft = customers[0][0];
         for(int[] x : customers){
             int cat = x[0];
-            if(ft<x[0]){
-                ft = x[0];
+            if(ft<cat){
+                ft = cat;
             }
             ft = ft + x[1];
-            int wt = ft - cat;
-            s +=wt;
+            s +=ft - cat;;
         }
         return (s / customers.length);
     }
