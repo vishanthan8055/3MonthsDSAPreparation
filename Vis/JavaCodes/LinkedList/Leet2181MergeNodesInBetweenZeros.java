@@ -1,7 +1,5 @@
 package Vis.JavaCodes.LinkedList;
 
-import java.util.List;
-
 public class Leet2181MergeNodesInBetweenZeros {
     public static void main(String[] args) {
 //        ListNode n8 = new ListNode(0);
@@ -66,11 +64,4 @@ public class Leet2181MergeNodesInBetweenZeros {
         }
         return h;
     }
-}
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode() {}
-    ListNode(int val) { this.val = val; }
-    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 }
